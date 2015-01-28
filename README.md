@@ -7,4 +7,3 @@ jQuery Mobile
 HTML5
 Google map
 CSS3
-
