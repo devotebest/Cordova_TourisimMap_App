@@ -1,0 +1,662 @@
+/* restart obj vals */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+html { position: relative; }
+body {
+    width: 100%;
+    font-size: 14px;
+}
+#wraper{
+    width: 100%;
+    float: left;
+}
+.ui-mobile .ui-page {
+    max-width: 640px !important;
+
+}
+.ui-header, .ui-footer {
+     max-width: 640px !important;;
+}
+.logo-home {
+    margin: auto;
+    width: 60%;
+    max-width: 250px;
+}
+.logo-home img {
+    width: 100%;
+}
+#bottom-menu {
+  /*  height: 70px; */
+    background: url("bottom-bck.png") repeat-x scroll left top rgba(0, 0, 0, 0);
+    background-color: #083301;
+    max-height: 85px;
+  /* margin: 0 auto; */
+}
+#bottom-menu div {
+    width: 20%;
+    float: left;
+    background: url("../img/bootom_divider.png") repeat-y 100% 100%;
+}
+#bottom-menu .bottom-dir,#bottom-menu .bottom-search{
+    width: 30%;
+}
+#bottom-menu img{
+    max-height: 85px;
+}
+#bottom-menu .bottom-dir img{
+    width: 69%;
+    max-width: 118px;
+}
+#bottom-menu .bottom-home img{
+    width: 66%;
+    max-width: 79px;
+}
+#bottom-menu .bottom-search img{
+    width: 55%;
+    max-width: 95px;
+}
+#bottom-menu .bottom-offers img{
+    width: 80%;
+    max-width: 91px;
+}
+#bottom-menu a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+#bottom-menu div img {
+  /*  width: 65%;
+    max-width: 55px; */
+}
+#bottom-menu span {
+    color: #fff;
+    font-weight: bold;
+}
+#main-menu {
+    width: 95%;
+    height: auto;
+    margin: auto;
+}
+.menu_group{
+   float:left;
+   width: 100%;
+   margin-bottom: 5%;
+}
+#main-menu a {
+    display: block;
+    float: left;
+    margin-left: 8%;
+    max-width: 178px;
+    text-align: center;
+    text-decoration: none;
+    width: 35%;
+}
+#main-menu .left_menus a{
+    margin-left: 8%;
+}
+#main-menu .right_menus{
+    float: right;
+    margin: 0 8% 0 0;
+}
+#main-menu span {
+    color: #9D2123;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: none;
+}
+#main-menu img {
+    width: 100%;
+}
+.m-menu-nearby img{
+    width: 80% !important;
+    max-width: 173px;
+}
+.m-menu-directory img{
+    width: 85% !important;
+    max-width: 175px; 
+}
+.m-menu-direction img{
+    width: 75% !important;
+    max-width: 175px; 
+}
+.m-menu-offers img{
+    width: 75% !important;
+    max-width: 175px;
+}
+.m-menu-tourgeauga img{
+    width: 90% !important;
+    max-width: 175px;
+}
+.m-menu-tourgeauga span{
+    font-size: 15px !important;
+}
+.m-menu-search img{
+    width: 70% !important;
+    max-width: 175px;
+}
+a:hover, a:active, a:focus {
+  border: 0;
+  outline: 0;
+}
+#geolocation {
+    color: red !important;
+}
+#data {
+    display: none;
+}
+/*
+#directory{
+    background: url("../img/directory-bck.png") repeat fixed center center rgba(0, 0, 0, 0) !important;
+    padding: 23% 5% 10%;
+    width: 90%;
+    text-shadow: none;
+}*/
+#business, #offer,#offers_page,#search_page,#directory,#directions-destinacions {
+    background: url("../img/directory-bck2.jpg") repeat center center !important;
+    color: #000000;
+    font-family: Arial;
+    font-size: 14px;
+    text-shadow: none;
+    width: 100%;
+    
+    padding-top: 0 !important;
+}
+#direction, #nearby {
+    padding-top: 0 !important;
+}
+#directory #header, #business #header, #offer #header,#offers_page #header,#search_page #header,#direction .header, #nearby .header,#directions-destinacions .header{
+     background: url('../img/directory-header.png') repeat-x;
+     border:none;
+    /* height: 10%; */
+    margin: 0 auto;
+    position: relative;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.logo-header{
+    margin: auto;
+    max-width: 170px;
+    width: 30%;
+}
+.logo-header img{
+    width: 100%;
+}
+.header_title{
+    color: #FFFFFF;
+    font-family: arial;
+    /*font-size: 22px;*/
+    font-size: 5.5vw;
+    font-size: 0.06rem; 
+    position: absolute;
+    right: 5%;
+    top: 33%;
+}
+#directory-content{
+    float: left;
+    padding: 5% 5% 10%;
+    width: 90%;
+}
+.search_options{
+    float:left;
+    width: 90%;
+}
+#abcsearch{
+    width: 15px;
+    height: auto;
+    float:right;
+    color:#b40d0d;
+}
+#abcsearch .letter,.letter_search{
+    clear: both;
+    float: left;
+    text-transform: uppercase;
+    font-size: 0.035rem;
+}
+#stores,#stores_abc,#stores_search,#stores_abcsearch {
+    float: left;
+    position:relative;
+    padding: 0;
+    margin: 0;
+    width: 90%;
+}
+#stores li,#stores_abc li,#stores_search li,#stores_abcsearch li {
+    list-style: none outside none;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+#stores img,#stores_abc img, #stores_search img,#stores_abcsearch img {
+    height: auto;
+    margin: 0 17%;
+    width: 66%;
+}
+#stores li a,#stores_abc li a, #stores_search li a,#stores_abcsearch li a{
+    text-decoration: none;
+}
+#stores li a h2,#stores_abc li a h2,#stores_search li a h2,#stores_abcsearch li a h2 {
+    width: 100%;
+    color: #A70F0E;
+    font-family: arial;
+    /*font-size: 19px;*/
+    text-align: center;
+    font-size: 5.5vw;
+    font-size: 0.05rem;
+}
+.store_more {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.store_directions, .store_number,.store_directions,.store_number{
+  /*  background: url("../img/button.png") no-repeat scroll 0 0 / 100% 100% rgba(0, 0, 0, 0);*/
+    color: #FFFFFF !important;
+    float: left;
+    font-family: "Myriad Pro";
+    font-size: 3.2vw;
+    font-size: 0.035rem;
+    font-weight: normal;
+    margin: 0 2%;
+    padding: 2% 5%;
+    text-align: center;
+    width: 31%;
+    position: relative;
+}
+#business .store_number span {
+    left: 10%;
+    top: 10%;
+    width: 82%;
+}
+.store_more img{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0!important;
+    position: relative;
+    max-width: 178px;
+}
+.store_directions,.store_number{
+    position: relative;
+}
+
+.store_directions span,.store_number span, .store_site span{
+    float: left;
+    position: absolute;
+}
+.store_directions span{
+    left: 12%;
+    margin: 0 auto;
+    top: 26%;
+    width: 78%;
+   /* margin-left: -81% !important;
+    margin-top: 7% !important;
+    width: 78%;*/
+}
+.store_number span{
+ /*  margin-left: -77%;
+    margin-top: 2%;*/
+    left: 15%;
+    top: 17%;
+    width: 72%;
+}
+.store_site span{
+    left: 14%;
+    top: 10%;
+    width: 68%;
+    margin: 0 auto;
+}
+.store_number, #stores_abc .store_number{
+        float: right;
+}
+.store_directions, #stores_abc .store_directions{
+        float: left;
+        /*font-size: 17px;*/
+        font-size: 4.5vw ;
+        font-size: 0.05rem !important;
+       /* padding: 11px;*/
+}
+#store{
+        float: left;
+        padding: 5%;
+        text-align: center;
+        width: 90%;
+        font-size: 20px;
+}
+#store  h2{
+        color: #242021;
+        font-family: arial;
+        font-size: 0.06rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+}
+#store  h3{
+        clear: both;
+        color: #000000;
+        float: left;
+        font-size: 24px;
+        font-size: 0.08rem;
+        font-weight: normal;
+        margin: 0 0;
+        text-align: center;
+        text-decoration: underline;
+        width: 100%;
+}
+#store .text{
+        float:left;
+        color:#000;
+        width: 90%;
+        margin: 0 5%;
+        text-align: justify;
+        font-family: arial;
+        font-size: 12px;
+}
+#business #store img{
+        width: 80%;
+        height: auto;
+        margin:0 10%;
+}
+#business .store_more{
+        position: relative;
+	float:left;
+	width:100%;
+        margin: 0;
+}
+#business .store_directions, #business .store_number,#business .store_site {
+    position: relative;
+    color: #FFFFFF !important;
+    float: left;
+    font-family: "Myriad Pro";
+    font-size: 3vw;
+    font-size: 0.04rem;
+    font-weight: normal;
+    margin: 0 1%;
+    max-width: 178px;
+    padding: 1% 2%;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 27%;
+}
+#business .store_directions{
+    font-size: 20px; 
+    font-size: 0.045rem !important;
+}
+#business .store_directions span{
+    top:27% !important;
+}
+#business .store_number{
+   font-size: 0.035rem;
+}
+#offers{
+    float: left;
+    list-style: none outside none;
+    position: relative;
+    text-align: center;
+    width: 100% !important;
+}
+#offers li a{
+    float: left;
+    clear: both;
+    color: #000000;
+    font-size: 6vw;
+    font-size: 0.06rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+#single_offer{
+    width: 90%;
+    padding: 5%;
+    text-align: center;
+}
+#single_offer h3{
+    font-size: 19px;
+}
+#single_offer img{
+    width: 90%;
+    height: auto;
+    margin:0 5%;
+}
+#single_offer .expire{
+   font-weight: bold;     
+   font-size: 20px;
+}
+#single_offer .text{
+    font-weight: bold;
+    font-size: 14px;
+}
+.reedem_offer{
+    font-size: 4.7vw !important;
+    color: #FFFFFF !important;
+    float: left;
+    font-family: "Myriad Pro";
+    font-weight: normal;
+    margin: 0 1%;
+    max-width: 178px;
+    padding: 1% 2%;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 30% !important;
+    margin: 0 34% !important;
+}
+#offers li{
+    float: left;
+    width: 100%;
+}
+.reedem_offer img {
+    height: auto;
+    width: 100%;
+}
+.reedem_offer span {
+    float: left;
+    font-size: 4.7vw !important;
+    font-size: 0.06rem !important;
+    left: 16%;
+    margin: 0 auto;
+    position: absolute;
+    top: 23%;
+}
+.letter,.letter_search{
+    cursor: pointer;
+}
+.letter:focus,.letter:hover,.letter_search:focus, .letter_search:hover {
+    font-weight: bold;
+}
+#all_offers{
+    float: left;
+    padding: 0 5%;
+    text-align: center;
+    width: 90%;
+    list-style: none;
+}
+.bottom_line{
+    float: left;
+    height: 1px;
+    width: 90%;
+    margin: 0 5%;
+    background:#a4a8ad;
+}
+#all_offers img{
+    float: left;
+    width: 60%;
+    height: auto;
+}
+#all_offers h3{
+    font-size: 19px;
+    font-size: 0.05rem;
+    float: left;
+    width: 100%;
+}
+#all_offers .expire{
+    float: left;
+    font-size: 16px;
+    font-size: 0.04rem;
+    font-weight: bold;
+}
+#all_offers .end_store{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+#all_offers .text{
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+    float: left;
+}
+#all_offers .redeem{
+    color: #FFFFFF !important;
+    float: left;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    font-weight: normal;
+    margin: 13% 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+#all_offers .redeem img{
+    width: 100%;
+    height: auto;
+    max-width: 178px;
+}
+#all_offers .redeem span{
+    /*font-size: 25px;*/
+    font-size: 5vw;
+    font-size: 0.06rem;
+    left: 8%;
+    position: absolute;
+    top: 22%;
+    width: 88%;
+}
+#all_offers .offer_right{
+    float: left;
+    padding-left: 5%;
+    width: 35%;
+}
+/******************/
+.ui-content {
+    padding: 0 !important;
+}
+.top_search{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid;
+    float: left;
+    height: 20%;
+    margin-bottom: 4%;
+    width: 99%;
+}
+#check-user .ui-btn,#check-user .ui-btn-inner,#check-user #submit{
+   /* width: 20px;
+    height: 20px;*/
+}
+#check-user .ui-input-text,#search2 .ui-input-text{
+    border-radius: 0;
+    border: none;
+    width: 82%;
+    float:left;
+    padding: 0;
+    margin: 0;
+}
+
+#check-user input{
+
+}
+#submit{
+    border-left: 1px solid #000000 !important;
+    float: right;
+   /* height: 13% !important; */
+    /*padding: 8px 0; */
+    width: 43px;
+    height:40px;
+}
+.ui-shadow-inset{
+    box-shadow: none !important;
+}
+#input_search{
+    border: medium none !important;
+    height: 30px;
+    padding: 5px !important;
+    width: 100% !important;
+     color:#807f7f;
+    font-weight: bold;
+}
+#categories,#categories2{
+    float: left;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 0 0 0 0;
+    color:#807f7f;
+    font-weight: bold;
+}
+.styled select {
+   background: transparent;
+   width: 100%;
+   padding: 9px 5px;
+   font-size: 16px;
+   border: 1px solid #000;
+   height: 40px;
+    -webkit-appearance: none;
+    color:#807f7f;
+    font-weight: bold;
+} 
+
+.styled{
+    background: url("../img/select.jpg") no-repeat scroll 100% 100% #FFFFFF;
+    height: 40px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 0 0 0 0;
+}
+/*
+* google map
+*/
+
+.marker-bubble {
+    text-shadow: none;
+}
+.view-listing {
+    display: block;
+    width: 80px;
+    height: 32px;
+    margin: auto;
+    background: url('view_listing_80.gif') no-repeat;
+}
+.marker-list-div {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.splash img{
+    width: 100%;
+    height: 100%;
+}
+
+/***************/
+
+.custom-select {
+	width: 100% !important;
+}
+.custom-select .ui-select {
+	width: 100% !important;	
+}
+.custom-select .ui-select div {
+	width: 100% !important;	
+}
+.custom-bottom-menu {
+	max-height: 100px !important;
+}
+.store-selection-page {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.store-selection-page li {
+    width: 100%;
+}

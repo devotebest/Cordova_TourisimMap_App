@@ -1,0 +1,637 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width">
+                <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Tour Geauga</title>
+                <link rel="stylesheet" type="text/css" href="css/main.css">
+                <script type="text/javascript" charset="utf-8" src="jquery-1.10.2.js"></script>
+                <script type="text/javascript">
+		   $(document).bind("mobileinit", function () {  
+				$.mobile.defaultPageTransition = "none"; 
+		   });
+                </script>
+                <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.2.min.css">
+                <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile.fixedToolbar.css">-->
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+ 
+                <!--<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>-->
+				<script type="text/javascript" charset="utf-8" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAU-EgF0l5o8DXx2YuPWb_hrKGBttnQx1c&sensor=true"></script>
+					
+                <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.3.2.js"></script>
+                <script type="text/javascript" charset="utf-8" src="jqm.page.params.js"></script>
+                <!--<script type="text/javascript" charset="utf-8" src="js/jquery.mobile.transition.js"></script>-->
+                <!-- ajax -->
+                <script type="text/javascript" charset="utf-8" src="js/custom.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/directory_page.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/search_page.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/offers_page.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/single_offer.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/business.js"></script>
+                <!-- search -->
+                <script type="text/javascript" charset="utf-8" src="js/categories.js"></script>
+                <script type="text/javascript" charset="utf-8" src="js/abcsearch.js"></script>
+                <!--->
+                <!-- end -->
+                 <script type="text/javascript" charset="utf-8" src="infobox.js"></script>
+                <script type="text/javascript" charset="utf-8" src="geolocation.js"></script>
+				                <script type="text/javascript">
+
+                    // Wait for Cordova to load
+                    //
+                    document.addEventListener("deviceready", onDeviceReady, false);
+
+                    // Cordova is ready
+                    //
+                    function onDeviceReady() {
+                        navigator.splashscreen.hide();
+						navigator.geolocation.getCurrentPosition(onSuccess, onError,{'enableHighAccuracy':true,'timeout':30000, maximumAge: 30000});
+                    }
+			
+					function onSuccess(position) {
+					     if(bGeoSuccess == false) {
+							g_userPosition = position;
+							//alert("Get Position Success!");
+							bGeoSuccess = true;
+						}
+					 }
+
+                    $( document ).ready(function() {
+                    $(function() {
+                        setTimeout(hideSplash, 5000);
+                      });
+
+                      function hideSplash() {
+					if($.mobile)
+                        $.mobile.changePage("#homepage", "fade");
+                      }
+                    });
+                  /* causeRepaintsOn = $("h1,h2,a,p");
+
+                    $(window).resize(function() {
+                      causeRepaintsOn.css("z-index", 1);
+                    });*/
+                    </script>
+                <script>
+                    $( document ).ready(function() {
+                    (function (doc, win) {
+                             var docEl = doc.documentElement,
+                             
+                                 recalc = function () {
+                                     var clientWidth = docEl.clientWidth;
+                                     if (!clientWidth) return;
+
+                                     docEl.style.fontSize = clientWidth + 'px';
+
+                                 };
+
+                             // Abort if browser does not support addEventListener
+                             if (!doc.addEventListener) return;
+
+                             // Test rem support
+                             var div = doc.createElement('div');
+                             div.setAttribute('style', 'font-size: 1rem');
+
+                             // Abort if browser does not recognize rem
+                             if (div.style.fontSize != "1rem") return;
+                             var clientWidth = docEl.clientWidth;
+                                     if (!clientWidth) return;
+
+                                     docEl.style.fontSize = clientWidth + 'px';
+
+                             win.addEventListener('resize', recalc, false);
+                             doc.addEventListener('DOMContentLoaded', recalc, false);
+                         })(document, window);
+                         });
+                 </script>
+	</head>
+	<body>
+            <div id ="wraper">
+            <div data-role="page" data-theme="b" id="splash" style="background-color: #fff;"> 
+                <div class="splash">
+                    <img src="img/splash.gif" alt="splash" />
+                </div>
+            </div>
+            <!-- Page 1 (homepage) -->
+            <div data-role="page" id="homepage">
+                    <!-- homepage content -->
+                <div data-role=content>
+                    <div class="logo-home">
+                        <img src="img/logo.png"/>
+                    </div>
+                    <!-- Main menu -->
+                    <div id="main-menu">
+                        <div class ="menu_group">
+                        <a class="m-menu-nearby" href="#nearby">
+                            <img src="img/main-menu-nearby.png" />
+                            <span>Nearby</span>
+                        </a>
+
+                        <a class="m-menu-directory right_menus" href="#directory">
+                            <img src="img/main-menu-directory.png" />
+                            <span>Directory</span>
+                        </a>
+                        </div>
+                        <div class ="menu_group">
+                        <a class="m-menu-direction" href="#direction">
+                            <img src="img/main-menu-direction.png" />
+                            <span>Directions</span>
+                        </a>
+
+                        <a class="m-menu-offers right_menus" href="#offers_page">
+                            <img src="img/main-menu-offers.png" />
+                            <span>Offers</span>
+                        </a>
+                        </div>
+                        <div class ="menu_group">
+                        <a class="m-menu-tourgeauga" target ="_blank" href="http://www.tourgeauga.com/mobile">
+                            <img src="img/main-menu-tourgeauga.png" />
+                            <span>TourGeauga.com</span>
+                        </a>
+
+                        <a class="m-menu-search right_menus" href="#search_page">
+                            <img src="img/main-menu-search.png" />
+                            <span>Search</span>
+                        </a>
+                        </div>
+                    </div>
+                    <!-- End -->
+                </div>
+                <!-- End -->
+            
+            
+                <!-- Bottom menu -->
+                <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+            
+            <!-- Page 2 (direction) -->
+            <div data-role="page" id="direction">
+                   <!-- header -->
+                <div class ="header" data-role="header"  data-tap-toggle="false">
+                        <div class="logo-header">
+                            <img src="img/header-logo.png"/>
+                        </div>
+                        <div class="header_title">Directions</div>
+                </div>
+                <!-- Google map -->
+                <div data-role=content style="width:100%; height:100%; padding:0;" >
+                    <div id="map_canvas_direction" style="width:100%; height:100%;" ></div>
+                </div>
+                <!-- End -->
+               
+                <!-- Bottom menu -->
+                <div id="bottom-menu" class="custom-bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                <div id="ui-select" class="custom-select">
+                    <!-- <a href="#directions-destinacions" data-role="button" data-icon="arrow-r" data-iconpos="right">Select Store ...</a> -->
+                    <div class="my-input">
+                        <input type="text" value="Current Location" name="curent_loc" id="cur_loc" disabled />
+                    </div>
+                    <div class="styled">
+                        <select style="position:relative" data-role="none" name="categories" id="all-dest" onchange="showSelected(this);">
+                            <option selected="selected" value="" >Business</option>
+                        </select>
+						<img onclick="clickSelect();" src="img/select.jpg"/>
+                    </div>
+                   
+                 </div>
+                   
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+            <div data-role="page" id="directions-destinacions">
+                   <!-- header -->
+                <div class ="header" data-role="header"  data-tap-toggle="false">
+                        <div class="logo-header">
+                            <img src="img/header-logo.png"/>
+                        </div>
+                        <div class="header_title">Select Store</div>
+                </div>
+                <!-- Google map -->
+                <div data-role=content style="width:100%; height:100%; padding:0;" >
+                    <div class="content-primary">
+                    <ul class="store-selection-page" data-role="listview"></ul>
+                </div>
+                </div>
+                <!-- Bottom menu -->
+                <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- Page 3 (nearby) -->
+             <div data-role="page" id="nearby">
+                   <!-- header -->
+                <div class ="header" data-role="header"  data-tap-toggle="false">
+                        <div class="logo-header">
+                            <img src="img/header-logo.png"/>
+                        </div>
+                        <div class="header_title">Nearby</div>
+                </div>
+                <!-- Google map -->
+                <div data-role=content style="width:100%; height:100%; padding:0;" >
+                    <div id="map_canvas" style="width:100%; height:100%" ></div>
+                    
+                </div>
+                <!-- End -->
+                
+                <!-- Bottom menu -->
+                <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+	<!-- Page 4 (directory) -->
+            <div data-role="page" id="directory">   	
+                    <div id ="header" data-role="header"  data-tap-toggle="false">
+                        <div class="logo-header">
+                            <img src="img/header-logo.png"/>
+                        </div>
+                        <div class="header_title">Directory</div>
+                    </div>
+                    <div id ="directory-content">
+                        <div class ="search_options">
+                        <form id="check-user"  data-ajax="false">
+                            <fieldset>
+                                <div class ="top_search">
+                                    <div data-role="none">
+                                        <input type="text" value="" name="username" id="input_search"/>
+                                    </div>                                  
+
+                                    <input data-role="none" type="image" src="img/search.png" alt="Submit" name="submit" id="submit">
+                                </div>
+                                <div class="styled">
+							<select style="position:relative" data-role="none" name="store_categories" id="categories" onchange="selectCategory(this);">
+                                        <option selected="selected" value="all" >Category</option>
+                                    </select>
+                                </div>
+
+                            </fieldset>
+                        </form>      
+                        
+                            <!--<input type="text" id="input" />
+                            <select name="categories" id="categories" onchange="getbusiness()">
+                                <option selected="selected" value="" >Category</option>
+                            </select>-->
+                        </div>
+                        <!-- end --> 
+
+                        <div id="abcsearch">
+                            <span class="letter">a</span>
+                            <span class="letter">b</span>
+                            <span class="letter">c</span>
+                            <span class="letter">d</span>
+                            <span class="letter">e</span>
+                            <span class="letter">f</span>
+                            <span class="letter">g</span>
+                            <span class="letter">h</span>
+                            <span class="letter">i</span><br>
+                            <span class="letter">j</span>
+                            <span class="letter">k</span>
+                            <span class="letter">l</span>
+                            <span class="letter">m</span>
+                            <span class="letter">n</span>
+                            <span class="letter">o</span>
+                            <span class="letter">p</span>
+                            <span class="letter">q</span>
+                            <span class="letter">r</span><br>
+                            <span class="letter">s</span>
+                            <span class="letter">t</span>
+                            <span class="letter">u</span>
+                            <span class="letter">v</span>
+                            <span class="letter">w</span>
+                            <span class="letter">x</span>
+                            <span class="letter">y</span>
+                            <span class="letter">z</span>
+                            <span class="letter">#</span>
+                        </div>
+                        <ul id ="stores" data-role="content">
+                        </ul>
+                        <ul id ="stores_abc" data-role="content">
+                        </ul>
+                    </div>
+                <!-- Bottom menu -->
+                <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+            	<!-- Page 5 (business) -->
+            <div data-role="page" id="business">
+                <div id ="header" data-role="header"  data-tap-toggle="false">
+                    <div class="logo-header">
+                        <img src="img/header-logo.png"/>
+                    </div>
+                </div>               
+               <div id ="store">  
+                </div>
+                <ul id ="offers" data-role="content">
+                </ul>
+ <!--test-->               
+<!-- end --> 
+                <!-- Bottom menu -->
+                <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+          <!-- Page 6 (offer) -->
+          <div data-role="page" id="offer">   
+                <div id ="header" data-role="header"  data-tap-toggle="false">
+                    <div class="logo-header">
+                        <img src="img/header-logo.png"/>
+                    </div>
+                </div>
+              <div id ="single_offer">
+              </div>
+              <!-- Bottom menu -->
+              <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+              <!-- End -->
+          </div>
+            <!-- End -->
+            <!-- Page 7 (offer page) -->
+          <div data-role="page" id="offers_page">   
+                <div id ="header" data-role="header"  data-tap-toggle="false">
+                    <div class="logo-header">
+                        <img src="img/header-logo.png"/>
+                    </div>
+                    <div class="header_title">Offers</div>
+                </div>
+	  <ul id ="all_offers" data-role="content">
+	  </ul>
+              <!-- Bottom menu -->
+              <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+              <!-- End -->
+          </div>
+            <!-- End -->
+            	<!-- Page 8 (search) -->
+            <div data-role="page" id="search_page">   	
+                    <div id ="header" data-role="header"  data-tap-toggle="false">
+                        <div class="logo-header">
+                            <img src="img/header-logo.png"/>
+                        </div>
+                    </div>
+                    <div id ="directory-content">
+                       <!-- <div class ="search_options">
+                            <input type="text" id="input_search" />
+                            <select name="categories_search" id="categories2" onchange="getbusiness_serch()">
+                                <option selected="selected" value="" >Category</option>
+                            </select>
+                        </div>-->    
+                        <div class ="search_options">
+                            <form id="search2"  data-ajax="false">
+                                <fieldset>
+                                    <div class ="top_search">
+                                        <div data-role="none">
+                                            <input type="text" value="" name="business_input" id="input_search"/>
+                                        </div>                                  
+
+                                        <input data-role="none" type="image" src="img/search.png" alt="Submit" name="submit" id="submit">
+                                    </div>
+                                    <div class="styled">
+							   <select data-role="none" name="categories_search" id="categories2" onchange="searchCategory(this);">
+                                           <option selected="selected" value="all" >Category</option>
+                                       </select>
+                                    </div>
+                                </fieldset>
+                            </form>      
+                        
+                            <!--<input type="text" id="input" />
+                            <select name="categories" id="categories" onchange="getbusiness()">
+                                <option selected="selected" value="" >Category</option>
+                            </select>-->
+                        </div>
+                        <!-- end --> 
+
+                        <div id="abcsearch">
+                            <span class="letter_search">a</span>
+                            <span class="letter_search">b</span>
+                            <span class="letter_search">c</span>
+                            <span class="letter_search">d</span>
+                            <span class="letter_search">e</span>
+                            <span class="letter_search">f</span>
+                            <span class="letter_search">g</span>
+                            <span class="letter_search">h</span>
+                            <span class="letter_search">i</span><br>
+                            <span class="letter_search">j</span>
+                            <span class="letter_search">k</span>
+                            <span class="letter_search">l</span>
+                            <span class="letter_search">m</span>
+                            <span class="letter_search">n</span>
+                            <span class="letter_search">o</span>
+                            <span class="letter_search">p</span>
+                            <span class="letter_search">q</span>
+                            <span class="letter_search">r</span><br>
+                            <span class="letter_search">s</span>
+                            <span class="letter_search">t</span>
+                            <span class="letter_search">u</span>
+                            <span class="letter_search">v</span>
+                            <span class="letter_search">w</span>
+                            <span class="letter_search">x</span>
+                            <span class="letter_search">y</span>
+                            <span class="letter_search">z</span>
+                            <span class="letter_search">#</span>
+                        </div>
+                        <ul id ="stores_search" data-role="content">
+                        </ul>
+                        <ul id ="stores_abcsearch" data-role="content">
+                        </ul>
+                    </div>
+                <!-- Bottom menu -->
+                <div id="bottom-menu" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                    <div class="bottom-offers">
+                        <a href="#offers_page">
+                            <img src="img/bottom-offers-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-search">
+                        <a href="#search_page">
+                            <img src="img/bottom-search-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-dir">
+                        <a href="#directory">
+                            <img src="img/bottom-directory-icon.png"/><br />
+                        </a>
+                    </div>
+                    <div class="bottom-home">
+                        <a href="#homepage">
+                            <img src="img/bottom-home-icon.png"/><br />
+                        </a>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+            <!-- Data Informations -->
+            <div id="data">
+                <input id="destinacion-coords" type="hidden" value="0/0" />
+            </div>
+            </div>
+
+	</body>
+</html>
